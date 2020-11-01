@@ -1,0 +1,58 @@
+Problem Description
+Your task is to calculate the sum of some integers.
+ 
+
+Input
+Input contains an integer N in the first line, and then N lines follow. Each line starts with a integer M, and then M integers follow in the same line.
+ 
+
+Output
+For each group of input integers you should output their sum in one line, and you must note that there is a blank line between outputs.
+ 
+
+Sample Input
+3
+4 1 2 3 4
+5 1 2 3 4 5
+3 1 2 3
+ 
+
+Sample Output
+10
+
+15
+
+6
+
+代码如下：
+
+#include <stdio.h>//预编译处理命令
+int main()//输入主函数
+{
+    int n,m,i,j,a[20],sum;/*定义变量：n为输入的行数 m为输入式子的最大整数sum 为式子的总和 a[20]为一个数组 简单来说就是数组好比如集合 集合中有20个元素 */
+    scanf("%d",&n);/*解释说明 ：（输入函数）在第一行输入的整数代表着接下来输入的行数*/
+    for(j=0;j<n;j++)/*for循环：表达式1：先给变量j赋值（即变量初始化）表达式2：继而设置循环条件（按照题目要求）若符合 则执行代码块 不符合则跳出此循环 表达式3：执行表达式2结束后继续循环 直至为假 退出循环 */
+    {
+     scanf("%d",&m);//输入此式子的最大整数（代表着从一按顺序加到最大的整数）
+     sum=0;//先给变量sum（和）赋初值 以免影响后续计算
+     for(i=0;i<m;i++)//for循环的嵌套：列出式子 直至加到最大整数m停止
+     {
+     scanf("%d",&a[i]);//循环：从一开始输入直至为最大整数停止 循环亦便停止
+     sum+=a[i];//循环一次便加一次 停止便是总和
+ 
+     }
+     printf("%d\n",sum);//输出总和
+     }
+    return 0;//返回0
+ 
+ 
+ 
+}
+
+题解：
+首先输入一个整数n 整数n代表着接下来输入的行数 继而在每一行输入整数m（以整数m开头）整数m便是每行式子的最大整数（式子是从1开始加到最大整数的加法运算）
+最后输出每一行式子的和（记得转行哦）
+思路：
+由题意可知 为了避免超出行数范围 可利用for循环（大循环）来实现 继而输出整数m
+若得到加法运算的式子 利用数组（可输出从1到最大整数）for循环（小循环）实现 
+最后在大循环输出总和
